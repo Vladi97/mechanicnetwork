@@ -26,3 +26,11 @@ body{
 	background: #3DA472;
 	height: 3px;
 }
+
+.types{
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 16px;
+	line-height: 1.4;
+	margin-left: 20%;
+	font-weight: 300;
+}
