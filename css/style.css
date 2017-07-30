@@ -1,0 +1,28 @@
+*{
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+}
+
+body{
+	width: 100%;
+	text-align: justify;
+}
+
+.marketing{
+	margin-top: 3%;
+}
+
+.img-circle{
+	margin-left: 100px;
+	margin-bottom: 4%
+}
+
+.btn-default{
+	margin-bottom: 3%;
+}
+
+.featurette-divider{
+	background: #3DA472;
+	height: 3px;
+}
