@@ -41,8 +41,13 @@ body{
 
 /* Registro */
 
+#tab{
+	margin-bottom: 3%;
+	margin-left: 30%;
+}
+
 #regContainer{
-    margin-top: 3%;  
+	padding-top: 3%;
 }
 
 .panel-login {
@@ -93,23 +98,6 @@ body{
     box-shadow: none;
     border-color: #ccc;
 }
-.btn-login {
-    background-color:#3D9DB3;
-    outline: none;
-    color: #fff;
-    font-size: 14px;
-    height: auto;
-    font-weight: normal;
-    padding: 14px 0;
-    text-transform: uppercase;
-    border-color: #2d92a9;
-}
-.btn-login:hover,
-.btn-login:focus {
-    color: #fff;
-    background-color: #198da8;
-    border-color: #53A3CD;
-}
 .btn-register {
     background-color: #17ae47;
     outline: none;
@@ -129,14 +117,14 @@ body{
 }
 
 .fullscreen_bg {
-    position: fixed;
+	position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     background-size: cover;
     background-position: 50% 50%;
-    background-image: url('https://jointgroup.es/wp-content/uploads/2016/11/joint-network-group.jpg');
+    background-image: url('/mechanicnetwork/images/motor.jpg');
     background-repeat:repeat;
   }
 
@@ -159,4 +147,10 @@ body{
     rgb(18, 83, 93) 40px);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
+}
+
+@media all and (max-height: 617px) {
+    .fullscreen_bg{
+    	position: relative;
+    }
 }
