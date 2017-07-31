@@ -3,11 +3,12 @@ html,
 body {
   background-size: cover;
   background-position: 50% 50%;
-  background-image: url('/mechanicnetwork/images/renault.jpg');
-  background-repeat:repeat;
+  background-image: url('/mechanicnetwork/images/fondo_default.png');
+  background-repeat: no-repeat;
   font-family: 'Varela Round';
   font-weight: bold;
 }
+
 /*=== 2. Anchor Link ===*/
 a {
   color: #fff;
@@ -17,6 +18,7 @@ a:hover {
   color: #E9E9E9;
   text-decoration: none;
 }
+
 /*=== 3. Text Outside the Box ===*/
 .etc-login-form {
   color: #fff;
