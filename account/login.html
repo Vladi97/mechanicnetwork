@@ -3,7 +3,7 @@
    <head>
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <title>Inicio</title>
+      <title>Autentificación</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <!-- External CSS and javascript -->
       <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -17,7 +17,7 @@
    <body>
    <div id="info" class="col-md-6 col-md-offset-3">
       <!-- LOGIN FORM -->
-    <div class="text-center" style="padding:50px 0">
+    <div id="log" class="text-center">
       <div class="logo">Iniciar Sesión</div>
       <!-- Main Form -->
       <div class="login-form-1">
@@ -33,24 +33,28 @@
                 <label for="lg_password" class="sr-only">Contraseña</label>
                 <input type="password" class="form-control" id="lg_password" name="lg_password" placeholder="Contraseña">
               </div>
-              <div class="form-group login-group-checkbox">
+              <!-- <div class="form-group login-group-checkbox">
                 <input type="checkbox" id="lg_remember" name="lg_remember">
                 <label for="lg_remember">recordarme</label>
-              </div>
+              </div> -->
             </div>
             <button type="submit" class="login-button"><i class="fa fa-chevron-right"></i></button>
           </div>
           <div class="etc-login-form">
-            <p>Olvidó su contraseña? <a href="#recordar">click aquí</a></p>
-            <p>Eres nuevo? <a href="/mechanicnetwork/account/signup.html">Cree una cuenta</a></p>
+<!--             <p>Olvidó su contraseña? <a href="#recordar">click aquí</a></p>
+ -->            <p>Eres nuevo? <a href="/mechanicnetwork/account/signup.html">Cree una cuenta</a></p>
+                <br>
           </div>
+          <br>
         </form>
       </div>
+      <br>
+      <br>
       <!-- end:Main Form -->
     </div>
 
     <!-- FORGOT PASSWORD FORM -->
-    <div id="recordar" class="text-center" style="padding:50px 0">
+    <div id="recordar" class="text-center">
       <div class="logo">Recordar contraseña</div>
       <a href="" id="recordar"></a>
       <!-- Main Form -->
@@ -74,5 +78,5 @@
     </div>
     </div>
       <script src="application.js" type="text/javascript"></script><!-- revisar ruta -->
-   </body>
+</body>
 </html>
