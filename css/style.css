@@ -203,17 +203,14 @@ body#profile{
     content: "";
     line-height: 0;
 }
-.navbar-nav.navbar-right:last-child {
-    margin-right: 15px !important;
-}
 .navbar-footer 
 {
     background-color:#DDD;
 }
 .navbar-footer-content { padding:15px 15px 15px 15px; }
 .dropdown-menu {
-padding: 0px;
-overflow: hidden;
+	padding: 0px;
+	overflow: hidden;
 }
 
 .brand_network {
@@ -233,4 +230,18 @@ overflow: hidden;
     margin-top: 3px;
     margin-left: 25px;
     position: absolute;
+}
+
+.navbar{
+	margin-bottom: 25px;
+}
+
+.navbar-right{
+	float: left;
+	margin:0px;
+	padding: 0px;
+}
+
+#change-image{
+	text-align: justify;
 }
