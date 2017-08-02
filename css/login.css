@@ -6,7 +6,7 @@ body {
   background-image: url('/mechanicnetwork/images/fondo_default.png');
   background-repeat: no-repeat;
   font-family: 'Varela Round';
-  /*height: 100%;*/
+  height: 100%;
   font-weight: bold;
 }
 
