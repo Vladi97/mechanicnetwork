@@ -191,6 +191,10 @@ body#profile{
   padding-right: 15px;
 }
 
+.row span{
+	color: #fff;
+}
+
 .navbar-content
 {
     width:320px;
@@ -202,10 +206,6 @@ body#profile{
     display: table;
     content: "";
     line-height: 0;
-}
-.navbar-footer 
-{
-    background-color:#DDD;
 }
 .navbar-footer-content { padding:15px 15px 15px 15px; }
 .dropdown-menu {
@@ -246,6 +246,7 @@ body#profile{
 	text-align: justify;
 }
 
+
 /**********File Inputs**********/
 .inputfile {
     width: 0.1px;
@@ -283,11 +284,14 @@ body#profile{
 	font-family: 'Lato';
 }
 
+.btn-default{
+	border: 1px solid #fff;
+}
+
 /* style 3 */
 
 .inputfile-3 + label {
     color: #fff;
-    background: #58CD4D;
 }
 
 .inputfile-3:focus + label,
@@ -295,4 +299,33 @@ body#profile{
 .inputfile-3 + label:hover {
     color: #fff;
 }
+
+.panel-tittle{
+	color: #000;
+}
 /**********End File Inputs**********/
+
+/*tooltip text*/
+
+.tooltip {
+    position: relative;
+    display: none;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+	display: inline-block;
+}
