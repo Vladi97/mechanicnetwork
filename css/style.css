@@ -299,10 +299,6 @@ body#profile{
 .inputfile-3 + label:hover {
     color: #fff;
 }
-
-.panel-tittle{
-	color: #000;
-}
 /**********End File Inputs**********/
 
 /*tooltip text*/
@@ -328,4 +324,14 @@ body#profile{
 
 .tooltip:hover .tooltiptext {
 	display: inline-block;
+}
+
+.panel-tittle{
+    color: #000;
+}
+
+/*SignUp*/
+
+#messageUser{
+    display: none;
 }
