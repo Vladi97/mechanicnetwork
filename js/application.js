@@ -1,176 +1,103 @@
 //registro
 $(function() {
     $('#login-form-link').click(function(e) {
-		$("#login-form").delay(100).fadeIn(100);
- 		$("#register-form").fadeOut(100);
-		$('#register-form-link').removeClass('active');
-		$(this).addClass('active');
-		e.preventDefault();
-	});
-	$('#register-form-link').click(function(e) {
-		$("#register-form").delay(100).fadeIn(100);
- 		$("#login-form").fadeOut(100);
-		$('#login-form-link').removeClass('active');
-		$(this).addClass('active');
-		e.preventDefault();
-	});
+    $("#login-form").delay(100).fadeIn(100);
+    $("#register-form").fadeOut(100);
+    $('#register-form-link').removeClass('active');
+    $(this).addClass('active');
+    e.preventDefault();
+  });
+  $('#register-form-link').click(function(e) {
+    $("#register-form").delay(100).fadeIn(100);
+    $("#login-form").fadeOut(100);
+    $('#login-form-link').removeClass('active');
+    $(this).addClass('active');
+    e.preventDefault();
+  });
 });
 
 //Log In
+$(function() {
+    $('#login-link').click(function(e) {
+      debugger;
+      var email = document.getElementById("lg_username").value;
+      var prd = document.getElementById("lg_password").value;
+      if (email=="admin") {
+        if (prd=="admin") {
+            window.location = "/mechanicnetwork/account/profile.html";
+        }
+      }
+    e.preventDefault();
+  });
+});
 
-(function($) {
-    "use strict";
-	
-	// Options for Message
-	//----------------------------------------------
-  var options = {
-	  'btn-loading': '<i class="fa fa-spinner fa-pulse"></i>',
-	  'btn-success': '<i class="fa fa-check"></i>',
-	  'btn-error': '<i class="fa fa-remove"></i>',
-	  'msg-success': 'All Good! Redirecting...',
-	  'msg-error': 'Wrong login credentials!',
-	  'useAJAX': true,
-  };
+//profile
 
-	// Login Form
-	//----------------------------------------------
-	// Validation
-  $("#login-form").validate({
-  	rules: {
-      lg_username: "required",
-  	  lg_password: "required",
-    },
-  	errorClass: "form-invalid"
-  });
-  
-	// Form Submission
-  $("#login-form").submit(function() {
-  	remove_loading($(this));
-		
-		if(options['useAJAX'] == true)
-		{
-			// Dummy AJAX request (Replace this with your AJAX code)
-		  // If you don't want to use AJAX, remove this
-  	  dummy_submit_form($(this));
-		
-		  // Cancel the normal submission.
-		  // If you don't want to use AJAX, remove this
-  	  return false;
-		}
-  });
-	
-	// Register Form
-	//----------------------------------------------
-	// Validation
-  $("#register-form").validate({
-  	rules: {
-      reg_username: "required",
-  	  reg_password: {
-  			required: true,
-  			minlength: 5
-  		},
-   		reg_password_confirm: {
-  			required: true,
-  			minlength: 5,
-  			equalTo: "#register-form [name=reg_password]"
-  		},
-  		reg_email: {
-  	    required: true,
-  			email: true
-  		},
-  		reg_agree: "required",
-    },
-	  errorClass: "form-invalid",
-	  errorPlacement: function( label, element ) {
-	    if( element.attr( "type" ) === "checkbox" || element.attr( "type" ) === "radio" ) {
-    		element.parent().append( label ); // this would append the label after all your checkboxes/labels (so the error-label will be the last element in <div class="controls"> )
-	    }
-			else {
-  	  	label.insertAfter( element ); // standard behaviour
-  	  }
-    }
-  });
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
 
-  // Form Submission
-  $("#register-form").submit(function() {
-  	remove_loading($(this));
-		
-		if(options['useAJAX'] == true)
-		{
-			// Dummy AJAX request (Replace this with your AJAX code)
-		  // If you don't want to use AJAX, remove this
-  	  dummy_submit_form($(this));
-		
-		  // Cancel the normal submission.
-		  // If you don't want to use AJAX, remove this
-  	  return false;
-		}
-  });
+$(function () {
+  $('[data-toggle="popover"]').popover()
+})
 
-	// Forgot Password Form
-	//----------------------------------------------
-	// Validation
-  $("#forgot-password-form").validate({
-  	rules: {
-      fp_email: "required",
-    },
-  	errorClass: "form-invalid"
-  });
-  
-	// Form Submission
-  $("#forgot-password-form").submit(function() {
-  	remove_loading($(this));
-		
-		if(options['useAJAX'] == true)
-		{
-			// Dummy AJAX request (Replace this with your AJAX code)
-		  // If you don't want to use AJAX, remove this
-  	  dummy_submit_form($(this));
-		
-		  // Cancel the normal submission.
-		  // If you don't want to use AJAX, remove this
-  	  return false;
-		}
-  });
+/*Save user*/
 
-	// Loading
-	//----------------------------------------------
-  function remove_loading($form)
+function saveUser(){
+
+}
+
+$(function() {
+    $('#register-user').click(function(e) {
+      var users = JSON.parse(localStorage.getItem('users'));
+
+      if (!users) {
+        users = [];
+      }
+      var pass = document.getElementById("sPassUser").value;
+      var passVer = document.getElementById("sPassUserVer").value;
+      if (pass==passVer) {
+        var user = {
+          "name": document.getElementById("sNameUser").value,
+          "lastname": document.getElementById("sLastNameUser").value,
+          "email": document.getElementById("sEmailUser").value,
+          "password": pass
+        };
+        users.push(user);
+        localStorage.setItem('users', JSON.stringify(users));
+      }else{
+        document.getElementById("messageUser").value = "Contraseñas incorrectas!";
+        document.getElementById("messageUser").style.display = "block";
+      }
+    e.preventDefault();
+    });
+});
+
+  /*file manager*/
+
+  'use strict';
+
+;( function( $, window, document, undefined )
+{
+  $( '.inputfile' ).each( function()
   {
-  	$form.find('[type=submit]').removeClass('error success');
-  	$form.find('.login-form-main-message').removeClass('show error success').html('');
-  }
+    var $input   = $( this ),
+      $label   = $input.next( 'label' ),
+      labelVal = $label.html();
 
-  function form_loading($form)
-  {
-    $form.find('[type=submit]').addClass('clicked').html(options['btn-loading']);
-  }
-  
-  function form_success($form)
-  {
-	  $form.find('[type=submit]').addClass('success').html(options['btn-success']);
-	  $form.find('.login-form-main-message').addClass('show success').html(options['msg-success']);
-  }
+    $input.on( 'change', function( e )
+    {
+      var fileName = '';
 
-  function form_failed($form)
-  {
-  	$form.find('[type=submit]').addClass('error').html(options['btn-error']);
-  	$form.find('.login-form-main-message').addClass('show error').html(options['msg-error']);
-  }
+      if( this.files && this.files.length > 1 )
+        fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
+      else if( e.target.value )
+        fileName = e.target.value.split( '\\' ).pop();
 
-	// Dummy Submit Form (Remove this)
-	//----------------------------------------------
-	// This is just a dummy form submission. You should use your AJAX function or remove this function if you are not using AJAX.
-  function dummy_submit_form($form)
-  {
-  	if($form.valid())
-  	{
-  		form_loading($form);
-  		
-  		setTimeout(function() {
-  			form_success($form);
-  		}, 2000);
-  	}
-  }
-	
-})(jQuery);
+      if( fileName )
+        $label.find( 'span' ).html( fileName );
+      else
+        $label.html( labelVal );
+    });
+  });
+})( jQuery, window, document );
