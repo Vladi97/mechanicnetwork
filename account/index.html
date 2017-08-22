@@ -35,7 +35,7 @@
                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Opciones <span class="caret"></span></a>
                            <ul class="dropdown-menu">
                               <li class="dropdown-header">Cuenta</li>
-                              <li><a href="/mechanicnetwork/account/signin.html">Mi perfil</a></li>
+                              <li><a href="profile.html">Mi perfil</a></li>
                               <li role="separator" class="divider"></li>
                               <li class="dropdown-header">Otras</li>
                               <li><a id="search_workshops" href="#">Buscar Talleres</a></li>
@@ -50,7 +50,11 @@
          </div>
       </div> <!-- /navvar -->
 
-      <div id="contenedor">
+      <div class="contenedor">
+         <input type="text" id="search" class="form-control" name="Username" placeholder="nombre"/>
+         <a class="btn btn-lg btn-primary btn-block" id="forget_button">&#128269  </a> 
+      </div> 
+      <div class="contenedor" id="contenedor">
       </div>
          <!-- Page Features -->
       <script src="/mechanicnetwork/js/account_index.js" type="text/javascript"></script>

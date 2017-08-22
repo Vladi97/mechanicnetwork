@@ -18,10 +18,17 @@ function getWorkShops(){
 		workshops=[];
 	}
 
+	var html = "";
 	for (var i = 0; i < workshops.length; i++) {
-		workshops[i]
+		var w = workshops[i];
+		html += "<div class=\"card\"><header class=\"w3-container w3-blue\"><h1>";
+		html += w.mark + "</h1></header><div class=\"w3-container\"><p>";
+		html += "Taller de mécanica en excelentes condiciones para atender cualquier problema que se le presente, " + w.dueno +" es el dueño de "+
+		"este fabuloso taller";
+		html += "</p></div><footer class=\"w3-container w3-blue\"><h5>Ver</h5></footer>";
+		products[i]
 	}
-
+	document.getElementById("contenedor").innerHTML = html;
 }
 
 document.getElementById("search_products").addEventListener("click", getProducts);
@@ -37,10 +44,10 @@ function getProducts(){
 	for (var i = 0; i < products.length; i++) {
 		var p = products[i];
 		html += "<div class=\"card\"><header class=\"w3-container w3-blue\"><h1>";
-		html += p.mark + "</h1></header><div class=\"w3-container\"><p>";
-		html += "Taller de mécanica en excelentes condiciones para atender cualquier problema que se le presente, " + p.dueno +" es el dueño de "+
-		"este fabuloso taller";
+		html += p.name + "</h1></header><div class=\"w3-container\"><p>";
+		html += "Marca: " + p.mark + "\n" + "Vendedor: " +p.dueno + "\n" + "Precio: " + p.precio;
 		html += "</p></div><footer class=\"w3-container w3-blue\"><h5>Ver</h5></footer>";
 		products[i]
 	}
+	document.getElementById("contenedor").innerHTML = html;
 }

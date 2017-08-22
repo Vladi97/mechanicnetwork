@@ -26,6 +26,15 @@
   .card {
     width: 98%;
   }
+
+  #search{
+  	width: 70%;
+  	margin-left: 0px;
+  }
+
+  #forget_button{
+  	width: 20%;
+  }
 }
 
 p{
@@ -36,9 +45,23 @@ h5, h1{
 	text-align: center;
 }
 
-#contenedor{
-	/*display: flex;
-	align-items: center;*/
+#search{
+	width: 50%;
+	margin: 2%;
+	margin-left: 15%;
+	margin-right: 1%;
+	float: left;
+	height: 45px;
+}
+
+#forget_button{
+	width: 15%;
+	margin: 2%;
+	margin-left: 1%;
+	float: left;
+}
+
+.contenedor{
 	background: #CED7D7;
 	box-shadow: 5px 5px 30px #999;
 	border-radius: 5px;
