@@ -9,10 +9,11 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-      <link rel="icon" type="image/ico" href="images/favicon.ico" />
-      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <link rel="icon" type="image/ico" href="/mechanicnetwork/images/favicon.ico" />
+      <link rel="stylesheet" href="/mechanicnetwork/css/home.css">
    </head>
-   <body>
+   <body id="home">
    <!-- navar -->
       <div class="navbar-wrapper">
          <div class="container">
@@ -29,7 +30,7 @@
                   </div>
                   <div id="navbar" class="navbar-collapse collapse">
                      <ul class="nav navbar-nav">
-                        <li class="active"><a href="#" id="show_name">Inicio</a></li>
+                        <li class="active"><a id="show_name">Inicio</a></li>
                         <li class="dropdown">
                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Opciones <span class="caret"></span></a>
                            <ul class="dropdown-menu">
@@ -37,9 +38,8 @@
                               <li><a href="/mechanicnetwork/account/signin.html">Mi perfil</a></li>
                               <li role="separator" class="divider"></li>
                               <li class="dropdown-header">Otras</li>
-                              <li><a href="#">Ver Talleres</a></li>
-                              <li><a href="#">Ver Productos</a></li>
-                              <li><a href="#">Ver Mecánicos</a></li>
+                              <li><a id="search_workshops" href="#">Buscar Talleres</a></li>
+                              <li><a id="search_products" href="#">Buscar Productos</a></li>
                               <li><a href="#"></a></li>
                            </ul>
                         </li>
@@ -49,12 +49,10 @@
             </nav>
          </div>
       </div> <!-- /navvar -->
-         <footer>
-            <p class="pull-right"><a href="#">Ir arriba</a></p>
-            <p>&copy 2017 MechanicNetwork · <a href="terms/privacy.pdf">Privacidad</a> · <a href="terms/terms.pdf">Términos</a></p>
-         </footer>
+
+      <div id="contenedor">
       </div>
-      <!-- /marketing -->
+         <!-- Page Features -->
       <script src="/mechanicnetwork/js/account_index.js" type="text/javascript"></script>
    </body>
 </html>

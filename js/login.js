@@ -21,7 +21,6 @@ function forget(){
 function searchUser(){
 	var user = document.getElementById("emailname_login").value;
 	var pass = document.getElementById("password_login").value;
-	debugger;
 	var find = true;
 	for (var i = 0; i < users.length; i++) {
 		var u = users[i];
@@ -46,7 +45,6 @@ if (!entities) {
 	entities=[];
 }
 function searchEntity(user, pass){
-	debugger;
 	for (var i = 0; i < entities.length; i++) {
 		var e = entities[i];
 		if (e.email==user) {
