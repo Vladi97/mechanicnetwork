@@ -36,6 +36,7 @@
                            <ul class="dropdown-menu">
                               <li class="dropdown-header">Cuenta</li>
                               <li><a href="profile.html">Mi perfil</a></li>
+                              <li><a id="new_product">Ingresar producto</a></li>
                               <li role="separator" class="divider"></li>
                               <li class="dropdown-header">Otras</li>
                               <li><a id="search_workshops" href="#">Buscar Talleres</a></li>
@@ -49,8 +50,11 @@
             </nav>
          </div>
       </div> <!-- /navvar -->
-      <input type="text" id="search" class="form-control" name="Username" placeholder="nombre"/>
-      <a class="btn btn-lg btn-primary btn-block" id="search_button">&#128270 </a> 
+      
+      <div class="contenedor">
+         <input type="text" id="search" class="form-control" name="Username" placeholder="nombre" style="display: inline-block;" />
+         <a class="btn btn-lg btn-primary btn-block" id="search_button" style="width: 15%; display: inline-block;">&#128270 </a> 
+      </div>
       <div class="contenedor" id="contenedor">
       </div>
          <!-- Page Features -->

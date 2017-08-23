@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Mechanic network</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- External CSS and javascript -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <link rel="icon" type="image/ico" href="/mechanicnetwork/images/favicon.ico"/>
+      <link rel="stylesheet" href="/mechanicnetwork/css/style.css">
+   </head>
+   <body >
+      <div id="fullscreen" class="fullscreen_bg"/>
+      <div id="regContainer" class="container">
+          <div class="row">
+              <div class="col-md-6 col-md-offset-3">
+                  <div class="panel panel-login">
+                      <div class="panel-body">
+                          <div class="row">
+                              <div class="col-lg-12">
+                                  <form id="product-form" action="#" method="post" role="form">
+                                      <div class="form-group">
+                                          <label for="mark">Marca</label>
+                                          <input id="pMarca" type="text" name="mark" tabindex="1" class="form-control">
+                                      </div>
+                                      <div class="form-group">
+                                          <label for="name">Nombre</label>
+                                          <input id="pName" type="text" name="name" tabindex="1" class="form-control">
+                                      </div>
+                                      <div class="form-group">
+                                          <label for="email">Precio</label>
+                                          <input id="pCost" type="text" name="cost" tabindex="1" class="form-control">
+                                      </div>
+                                      <div class="form-group">
+                                          <label id="messageUser"></label>
+                                      </div>
+                                      <div class="form-group">
+                                          <div class="row">
+                                              <div class="col-sm-6 col-sm-offset-3">
+                                                  <a id="register-product" class="form-control btn btn-register">Guardar</a>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </form>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <script src="/mechanicnetwork/js/products.js" type="text/javascript"></script>
+      <script type="text/javascript">
+        document.getElementById("register-product").addEventListener("click", add);
+
+
+function add() {
+  var current_user = JSON.parse(localStorage.getItem('current_user'));
+
+debugger;
+  var name = document.getElementById("pName").value;
+  var mark = document.getElementById("pMarca").value;
+  var cost = document.getElementById("pCost").value;
+  
+  
+
+  if (!current_user) {
+    alert("Debe iniciar sesión");
+  }else{
+    if (cost!="" && mark!="" && name!="") {
+      var products = JSON.parse(localStorage.getItem('products'));
+  
+      if (!products) {
+        products=[];
+      }
+      var p = {
+          "name": name,
+          "cost": cost,
+          "mark": mark,
+          "dueno": current_user.name;
+        };
+      products.push(p);
+        localStorage.setItem('products', JSON.stringify(products));
+    }else{
+      alert("Debe ingresar todos los datos");
+    }
+  }
+}
+      </script>
+   </body>
+</html>

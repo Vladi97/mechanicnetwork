@@ -6,14 +6,15 @@ if (!current_user) {
 }
 
 $( document ).ready(function() {
-	debugger;
+	getWorkShops;
     document.getElementById("show_name").text = "Hola " + current_user.name + "!";
 });
 
 document.getElementById("search_workshops").addEventListener("click", getWorkShops);
 
 function getWorkShops(){
-	var workshops = JSON.parse(localStorage.getItem('workshops'));
+	var workshops = JSON.parse(localStorage.getItem('entities'));
+	debugger;
 
 	if (!workshops) {
 		workshops=[];
@@ -22,11 +23,13 @@ function getWorkShops(){
 	var html = "";
 	for (var i = 0; i < workshops.length; i++) {
 		var w = workshops[i];
-		html += "<div class=\"card\"><header class=\"w3-container w3-blue\"><h1>";
-		html += w.mark + "</h1></header><div class=\"w3-container\"><p>";
-		html += "Taller de mécanica en excelentes condiciones para atender cualquier problema que se le presente, " + w.dueno +" es el dueño de "+
-		"este fabuloso taller";
-		html += "</p></div><footer class=\"w3-container w3-blue\"><h5>Ver</h5></footer>";
+		if (w.tipo=="taller") {
+			html += "<div class=\"card\"><header class=\"w3-container w3-blue\" style=\"display: inline-block;\"><h1>";
+			html += w.name + "</h1></header><div class=\"w3-container\"><p>";
+			html += "Taller de mécanica en excelentes condiciones para atender cualquier problema que se le presente, " + w.dueno +" es el dueño de "+
+			"este fabuloso taller";
+			html += "</p></div><footer class=\"w3-container w3-blue\"><h5>Ver</h5></footer></div>";
+		}
 	}
 	document.getElementById("contenedor").innerHTML = html;
 	current_result = "workshops";
@@ -44,10 +47,10 @@ function getProducts(){
 	var html = "";
 	for (var i = 0; i < products.length; i++) {
 		var p = products[i];
-		html += "<div class=\"card\"><header class=\"w3-container w3-blue\"><h1>";
+		html += "<div class=\"card\"><header class=\"w3-container w3-blue\" style=\"display: inline-block;\"><h1>";
 		html += p.name + "</h1></header><div class=\"w3-container\"><p>";
-		html += "Marca: " + p.mark + "\n" + "Vendedor: " +p.dueno + "\n" + "Precio: " + p.precio;
-		html += "</p></div><footer class=\"w3-container w3-blue\"><h5>Ver</h5></footer>";
+		html += "Marca: " + p.mark + "<br>" + "Vendedor: " +p.dueno + "<br>" + "Precio: " + p.cost;
+		html += "</p></div><footer class=\"w3-container w3-blue\"><h5>Ver</h5></footer></div>";
 	}
 	document.getElementById("contenedor").innerHTML = html;
 	current_result = "products";
@@ -57,10 +60,9 @@ document.getElementById("search_button").addEventListener("click", searchByName)
 
 function searchByName(){
 	var name = document.getElementById("search").value;
-	String html = "";
-	if (current_result=="workshops") {
+	var html = "";
+	if (current_result!="workshops") {
 		var products = JSON.parse(localStorage.getItem('products'));
-
 		for (var i = 0; i < products.length; i++) {
 			p = products[i];
 
@@ -68,31 +70,38 @@ function searchByName(){
 				products=[];
 			}
 
-			if (p.name == name) {{
-				html += "<div class=\"card\"><header class=\"w3-container w3-blue\"><h1>";
+			if (p.name == name) {
+				html += "<div class=\"card\"><header class=\"w3-container w3-blue\" style=\"display: block;\"><h1>";
 				html += p.name + "</h1></header><div class=\"w3-container\"><p>";
-				html += "Marca: " + p.mark + "\n" + "Vendedor: " +p.dueno + "\n" + "Precio: " + p.precio;
-				html += "</p></div><footer class=\"w3-container w3-blue\"><h5>Ver</h5></footer>";
+				html += "Marca: " + p.mark + "<br>" + "Vendedor: " +p.dueno + "<br>" + "<br>Precio: " + p.precio;
+				html += "</p></div><footer class=\"w3-container w3-blue\"><h5>Ver</h5></footer></div>";
 			}
 		}
 	}else{
-		var workshops = JSON.parse(localStorage.getItem('workshops'));
+		var workshops = JSON.parse(localStorage.getItem('entities'));
 
 		if (!workshops) {
 			workshops=[];
 		}
 
+
 		for (var i = 0; i < workshops.length; i++) {
 			var w = workshops[i];
 
 			if (name==w.name) {
-				html += "<div class=\"card\"><header class=\"w3-container w3-blue\"><h1>";
-				html += w.mark + "</h1></header><div class=\"w3-container\"><p>";
+				html += "<div class=\"card\"><header class=\"w3-container w3-blue\" style=\"display: block;\"><h1>";
+				html += w.name + "</h1></header><div class=\"w3-container\"><p>";
 				html += "Taller de mécanica en excelentes condiciones para atender cualquier problema que se le presente, " + w.dueno +" es el dueño de "+
 				"este fabuloso taller";
-				html += "</p></div><footer class=\"w3-container w3-blue\"><h5>Ver</h5></footer>";
+				html += "</p></div><footer class=\"w3-container w3-blue\"><h5>Ver</h5></footer></div>";
 			}
 		}
 	}
 	document.getElementById("contenedor").innerHTML = html;
+}
+
+document.getElementById("new_product").addEventListener("click", newProduct);
+
+function newProduct(){
+	window.open("/mechanicnetwork/products/index.html");
 }
