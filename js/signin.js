@@ -47,7 +47,8 @@ function saveUser(){
       "name": name,
       "lastname": lastname,
       "email": email,
-      "password": password
+      "password": password,
+      "foto": "/mechanicnetwork/images/logo.png"
     };
     users.push(user);
     localStorage.setItem('users', JSON.stringify(users));
@@ -94,7 +95,8 @@ function saveEntity(){
       "dueno": duenno,
       "email": email,
       "password": password,
-      "tipo": tipo
+      "tipo": tipo,
+      "foto": "/mechanicnetwork/images/logo.png"
     };
     entities.push(entity);
     localStorage.setItem('entities', JSON.stringify(entities));
