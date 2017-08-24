@@ -19,6 +19,7 @@ function forget(){
 
 
 function searchUser(){
+	debugger;
 	var user = document.getElementById("emailname_login").value;
 	var pass = document.getElementById("password_login").value;
 	var find = true;
@@ -26,7 +27,15 @@ function searchUser(){
 		var u = users[i];
 		if (u.email==user) {
 			if (u.password==pass) {
-                localStorage.setItem('current_user', JSON.stringify(u));
+				var current_user = {
+					"name": u.name,
+					"lastname": u.lastname,
+					"email": u.email,
+					"password": u.password,
+					"foto": u.image,
+					"type": "user"
+				};
+                localStorage.setItem('current_user', JSON.stringify(current_user));
                 window.location= "index.html";
                 find = true;
 			}
@@ -49,7 +58,16 @@ function searchEntity(user, pass){
 		var e = entities[i];
 		if (e.email==user) {
 			if (e.password==pass) {
-                localStorage.setItem('current_user', JSON.stringify(e));
+                var enti = {
+                	"name": e.name,
+                	"password": e.password,
+                	"email": e.email,
+                	"type": "entity",
+                	"tipo": e.tipo,
+                	"dueno": e.dueno,
+                	"foto": e.foto
+                };
+                localStorage.setItem('current_user', JSON.stringify(enti));
                 window.location= "index.html";
                 find = true;
 			}

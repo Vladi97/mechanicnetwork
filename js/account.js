@@ -74,7 +74,7 @@ function searchByName(){
 				html += "<div class=\"card\"><header class=\"w3-container w3-blue\" style=\"display: block;\"><h1>";
 				html += p.name + "</h1></header><div class=\"w3-container\"><p>";
 				html += "Marca: " + p.mark + "<br>" + "Vendedor: " +p.dueno + "<br>" + "<br>Precio: " + p.precio;
-				html += "</p></div><footer class=\"w3-container w3-blue\"><h5>Ver</h5></footer></div>";
+				html += "</p></div><footer class=\"w3-container w3-blue\"><h5></h5></footer></div>";
 			}
 		}
 	}else{
@@ -93,7 +93,7 @@ function searchByName(){
 				html += w.name + "</h1></header><div class=\"w3-container\"><p>";
 				html += "Taller de mécanica en excelentes condiciones para atender cualquier problema que se le presente, " + w.dueno +" es el dueño de "+
 				"este fabuloso taller";
-				html += "</p></div><footer class=\"w3-container w3-blue\"><h5>Ver</h5></footer></div>";
+				html += "</p></div><footer class=\"w3-container w3-blue\"><h5></h5></footer></div>";
 			}
 		}
 	}
@@ -106,7 +106,7 @@ function newProduct(){
 	window.open("/mechanicnetwork/products/index.html");
 }
 
-document.getElementById("salir").addEventListener("click" exit);
+document.getElementById("salir").addEventListener("click", exit);
 
 function exit(){
 	localStorage.setItem('current_user', JSON.stringify(""));
